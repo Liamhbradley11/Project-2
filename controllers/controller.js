@@ -54,3 +54,5 @@ module.exports =(app) => {
         request.flash('You are logged out');
         requst.redirect('/login');
     })
+    return User;
+};
