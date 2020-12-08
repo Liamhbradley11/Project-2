@@ -2,7 +2,7 @@
 "development": {
     "username": "root",
     "password": null,
-    "database": "client_profile_db",
+    "database": "Werqout_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

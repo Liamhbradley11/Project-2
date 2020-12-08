@@ -1,2 +1,3 @@
-CREATE DATABASE clients_db;
-CREATE DATABASE trainers_db;
+DROP DATABASE Werqout_db;
+CREATE DATABASE Werqout_db;
+USE Werqout_db;
