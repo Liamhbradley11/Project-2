@@ -1,0 +1,70 @@
+<!--Error Block-->
+<div class="error-block">
+    {{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+
+    {{#if errors}}
+        {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+</div>
+
+<!--user menu-->
+<div class="menu">
+    <span class="close">&times;</span>
+    <a href="/"><img class ="" src="" alt=""></a>
+    <ul>
+        <a href="/user/workout"><li>Workout</li></a>
+        <a href="/user/profile"><li>Profile</li></a>
+    </ul>
+</div>
+
+<!--user header-->
+<div class="site-header">
+    <ul>
+        <li class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></li>
+        <li><img class ="" src="" alt=""></li>
+        <li class="header-button"><a href="/logout"><button type="button">Logout</button></a></li>
+    </ul>
+</div>
+
+<div class="workout-flow">
+    {{!--<div class="previous-day">
+        <button class="previous-day-button" type="button">Previous Day</button>
+    </div>--}}
+
+    <div class="workout-card">
+        <div class="workout-content">
+            {{#with singleWorkout}}
+            <h1 class="card-day">Day {{day}}</h1>
+            <h1 class="card-program">{{Program.name}}</h1>
+            <p class="card-text">
+                {{text}} 
+            </p>
+            
+        </div>
+        <div class="card-feedback">
+            {{!--<label class="feedback-label" for="feeback">Submit Feedback About Your Workout:</label>
+            <textarea class="feedback" name="feedback"></textarea>--}}
+            <div class="header-button complete-button"><button type="button" id={{day}}>Complete Workout</button></div>
+        </div>
+        {{/with}}
+    </div>
+
+    {{!--<div class="next-day">
+        <button class="next-day-button" type="button">Next Day</button>
+    </div>--}}
+
+    <img class ="" src="" alt="">
+</div>
+<script src="/javascript/user.js"></script>
