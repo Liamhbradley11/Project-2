@@ -1,28 +1,123 @@
+<!--Error Block-->
+<div class="error-block">
+    {{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+
+    {{#if errors}}
+        {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+</div>
+
+<!--Login Modal-->
+<div class="login-modal">
+    <div class="login-modal-content">
+        <span class="close">&times;</span>
+        <h2 class="login-header">Account Login</h2>
+
+        <form method="POST">
+            <div class="login__username">
+                <label>Username:</label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="login__password">
+                <label>Password:</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button class ="submit-button" type="submit" formaction="/login">Login</button>
+            <button class ="submit-button" type="submit" formaction="/login/admin">Admin Login</button>
+        </form>
+    </div>
+</div>
+
+<!--Register Modal-->
+<div class="register-modal">
+    <div class="register-modal-content">
+        <span class="close">&times;</span><h2 class="register-header">Sign Up!</h2>
+        <form method="POST" action="/users/register">
+            <div class="register__name"> 
+                <label>Name:</label>
+                <input type="text" class="form-control" placeholder="Name" name="name">
+            </div>
+            <div class="register__username">
+                <label>Username:</label>
+                <input type="text" class="form-control" placeholder="Username" name="username">
+            </div>
+            <div class="register__email">
+                <label>Email:</label>
+                <input type="email" class="form-control" placeholder="Email" name="email">
+            </div>
+            <div class="register__password">
+                <label>Password:</label>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+            </div>
+            <div class="register__password--confirm">
+                <label>Confirm Password:</label>
+                <input type="password" class="form-control" placeholder="Confirm Password" name="password2">
+            </div>
+            {{#each programs}}
+                <div class="workout-text">
+                    <input type="radio" class="form-control" name="workouts" value="{{this.id}}">
+                    <label class="workout-label">{{this.name}}</label>
+                    <p>{{this.description}}</p>
+                </div>
+            {{/each}}
+            <button class="submit-button submit-button__register" type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<!--Site Header-->
+<div class="site-header">
+    <ul>
+        <li><img class ="logo" src="/" alt=""></li>
+        <li class="header-button login-button"><button type="button">Login</button></li>
+        <li class="header-button register-button"><button type="button">Sign Up!</button></li>
+    </ul>
+</div>
+
+<!--landing body-->
 <div class="landing-body">
-    <h1>Test</h1>
     <div class="banner-block">
         </div>
         <div class="inspire-block">
-            <h1 class="inspire-quote">"WerQout!"</h1>
-            <h1 class="inspire-text">Working out, simplified</h1>   
+            <h1 class="inspire-quote">"WERQOUT"</h1>
+            <h1 class="inspire-text">FITNESS TO THE NEXT LEVEL</h1>   
         </div>
-        <img class = "banner-image" src="" alt="">
+        <img class = "" src="" alt="">
     </div>
     <div class="about-section">
         <div class="about-content">
             <div class="about-photo-block">
+                <div class="social">
+                    <a href=#><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    <a href=#><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href=#><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+                    <a href=#><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                    <a href=#><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                    <a href=#><i class="fa fa-envelope" aria-hidden="true"></i></a>
                 </div>
-                <img class ="trainer-photo" src="" alt="">
+                <img class ="" src="" alt="">
             </div>
             <div class="about-text">
-                <h2 class="about-title">About</h2>
+                <h2 class="about-title">About Trainer</h2>
                 <ul>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin enim sem, ultricies nec lectus in, finibus pharetra urna. Nullam vel dignissim lorem, suscipit convallis ex.</li>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin enim sem, ultricies nec lectus in, finibus pharetra urna. Nullam vel dignissim lorem, suscipit convallis ex.</li>
-                    <li>Lorem ipsum dolor or sit amet, consectetur adipiscing elit. Proin enim sem, ultricies nec lectus in, finibus pharetra urna. Nullam vel dignissim lorem, suscipit convallis ex.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin enim sem, ultricies nec lectus in, finibus pharetra urna. Nullam vel dignissim lorem, suscipit convallis ex.</li>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin enim sem, ultricies nec lectus in, finibus pharetra urna. Nullam vel dignissim lorem, suscipit convallis ex.</li>
                 </ul>
             </div>
         </div>
     </div>
-</div> 
+</div>
