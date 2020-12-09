@@ -1,0 +1,65 @@
+<!--Error Block-->
+<div class="error-block">
+    {{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+
+    {{#if errors}}
+        {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+</div>
+
+<!--admin menu-->
+<div class="menu">
+    <span class="close">&times;</span>
+    <a href="/"><img class ="logo" src="" alt=""></a>
+    <ul>
+        <a href="/admin/clients"><li>Client List</li></a>
+        <a href="/admin/programs"><li>Programs</li></a>
+        <a href="/admin/create"><li>Create Program</li></a>
+    </ul>
+</div>
+
+<!--admin header-->
+<div class="site-header">
+    <ul>
+        <li class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></li>
+        <li><img class ="logo" src="" alt=""></li>
+        <li class="header-button"><a href="/logout"><button type="button">Logout</button></a></li>
+    </ul>
+</div>
+
+{{#with length}}
+<div class="data-storage" id={{length}} style="display:none"></div>
+{{/with}}
+
+<div class="list-block">
+    <div class="list-section">
+        <h1 class="list-section-title">Client List</h1>
+        <div class="list-content">
+        {{#each clients}}
+                <ul>
+                    <li>Name: {{name}}</li>
+                    <li>Email: {{email}}</li>
+                    <li>User Name: {{username}}</li>
+                    <li>Program: {{Program.name}}</li>
+                    <div class="client-bar">
+                        <h1 class="{{id}}" id={{currentDay}} value="{{Program.days}}">{{currentDay}}/{{Program.days}} Days</h1>
+                        <span class="span-{{id}}"></span>
+                    </div>        
+                </ul>
+        {{/each}}
+        </div>
+    </div>
+    <img class="program-banner" src="/assets/images/banner-cement.jpg" alt="cement">
+</div>
