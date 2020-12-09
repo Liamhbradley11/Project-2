@@ -14,11 +14,18 @@ module.exports = (sequelize, DataTypes) => {
                 not: ["[a-z]",'i']
             }
         },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        }
+    },{
         classMethods: {
             associate: function(models){
-                Program.hasMany(models.Clients)
+                Program.hasMany(models.User),
+                Program.hasMany(models.WorkoutDay)
             }
-        }
+        },
+        timestamps: false
     });
     return Program;
-}; 
+};
