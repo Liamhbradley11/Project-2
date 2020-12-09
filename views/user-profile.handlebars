@@ -1,0 +1,78 @@
+<!--Error Block-->
+<div class="error-block">
+    {{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+
+    {{#if errors}}
+        {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+</div>
+
+<!--user menu-->
+<div class="menu">
+    <span class="close">&times;</span>
+    <a href="/"><img class ="" src="" alt=""></a>
+    <ul>
+        <a href="/user/workout"><li>Workout</li></a>
+        <a href="/user/profile"><li>Profile</li></a>
+    </ul>
+</div>
+
+<!--user header-->
+<div class="site-header">
+    <ul>
+        <li class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></li>
+        <li><img class ="" src="" alt=""></li>
+        <li class="header-button"><a href="/logout"><button type="button">Logout</button></a></li>
+    </ul>
+</div>
+
+<div class="profile-content">
+    <div class="profile-panel">
+        {{#with info}}
+        <h1 class="profile-panel-header">Welcome {{name}}</h1>
+        <div class="profile-progress-block">
+            <h1 class="current-program-title">Check out your progress on the {{Program.name}} program!</h1>
+            <a href="/user/workout" class="header-button workout-button"><button type="button">View Workout</button></a>
+            <div class="progress-bar">
+                <h1 id={{currentDay}} value="{{Program.days}}">{{currentDay}}/{{Program.days}} Days</h1>
+                <span></span>
+            </div>
+        </div>
+        <div class="profile-info-block">
+            <h1 class="profile-info-title">Profile Information</h1>
+            <form method="POST" action="/user/profile?_method=PUT">
+            <ul class="info-list">
+                <li>Name: <span class="user-info">{{name}}</span>
+                    <input type="text" name="name" value={{name}}>
+                </li>
+                <li>Username: <span class="user-info">{{username}}</span>
+                    <input type="text" name="username" value={{username}}>
+                </li>
+                <li>Email: <span class="user-info">{{email}}</span>
+                    <input type="email" name="email" value={{email}}>
+                </li>
+                <!--<li>Password: <span class="user-info">{{password}}</span>
+                    <input type="text" name="username" value={{password}}>
+                </li>-->
+                <li class="header-button edit-button"><button type="button">Edit</button></li>
+                <li class="header-button save-button"><button type="submit">Save</button></li>
+            </ul>
+            <form>
+        </div>
+        {{/with}}
+    </div>
+    <img class="" src="" alt="">
+</div>
+<script src="/javascript/user.js"></script>
