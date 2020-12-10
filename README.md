@@ -54,7 +54,7 @@ ADMIN CLIENT LIST
 
 
 ## Github-Repo
-* Find the Github Repository [HERE](https://github.com/AndrewKosel/Project-3)
+* Find the Github Repository [HERE](https://github.com/liamhbradley11/Project-2)
 
 ## Deployed Link
 * https://tranquil-chamber-87029.herokuapp.com/
